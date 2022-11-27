@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- <html lang="en" class="dark-mode"> -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <title>Mental Math Game</title>
+</head>
+<body>
+    <header>
+        <!-- Side Menu -->
+        <aside class="menu-container">
+            <div class="hamburguer-btn" id="hamburguerBtn-js">
+                <div class="lines" ></div>
+                <div class="lines" ></div>
+                <div class="lines" ></div>
+                <div class="arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+            </div>
+            <div class="menu-content">
+                <h1>Mental Math Game</h1>
+                
+                <div class="switch-mode-div">
+                    <input type="checkbox" name="switch-modes" id="inputCheckbox" class="input-checkbox">
+                    <label for="inputCheckbox" class="label">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                        <div class="ball"></div>
+                    </label>
+                </div>
+                <p>Created by: <a href="https://github.com/thaynaralimaa" target="_blank">Thaynara Lima</a></p>
+            </div>
+        </aside>
+    </header>
+    <main>
+        <div class="h1-content">
+            <h1 id="h1Display-js">Mental Math Game</h1>
+        </div>
+
+        <!-- The inicial screen content -->
+        <div class="inicial-screen" id="inicialScreen-js">
+            <p id="contentText-js">How good are you with mental math?</p>
+            <div class="option-button">
+                <abbr title="number of questions">
+                    <select name="numberOfQuestions" id="numberOfQuestions-js">
+                        <option value="10" selected>10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                    </select>
+                </abbr>
+
+                <abbr title="Numbers range">
+                    <select name="numbersRange" id="numbersRange-js">
+                        <option value="11" selected>0-10</option>
+                        <option value="21">0-20</option>
+                        <option value="51">0-50</option>
+                        <option value="101">0-100</option>
+                        <option value="1001">0-1000</option>
+                    </select>
+                </abbr>
+
+                <div class="radios">
+                    <abbr title="Addition and subtraction">
+                        <input type="radio" name="operationChosed" class="custum-radios" id="somAndSub" checked>
+                        <label for="somAndSub">+/-</label>
+                    </abbr>
+                    <abbr title="Multiplication">
+                        <input type="radio" name="operationChosed" class="custum-radios" id="mulAndDiv" >
+                        <label for="mulAndDiv">X</label>
+                    </abbr>
+                    <abbr title="Addition, subtraction and multiplication">
+                        <input type="radio" name="operationChosed" class="custum-radios" id="allOperators" >
+                        <label for="allOperators">All</label>
+                    </abbr>
+                </div>
+            </div>
+
+            <button id="startBtn-js" class="start-btn">Start</button>
+        </div>
+
+        <!-- The game screen content -->
+        <div class="game-screen" id="gameScreen-js">
+            <div class="gameInfo">
+                <p id="questionCounter-js"></p>
+                <p id="timer-js">00:00</p>
+            </div>
+            <div class="operationDisplay" id="operationDisplay-js"></div>
+            <div class="userInput">
+                <input type = 'number' id = 'userAnswer-js' class="user-answer" onkeypress = "submitAnswe(event)" required >
+                <label for = 'userAnswer'>Type here</label>
+            </div>
+        </div>
+
+        <!-- The end game screen content -->
+        <div class="end-screen" id="endScreen-js">
+            <h2>End Game </h2>
+            <p class="scoredText"> You scored: </p>
+            <p class="final-scored" id= 'finalScored-js'></p>
+            <p id="finalTimer-js"></p>
+            <button onclick = 'restart()'> Restart </button>
+        </div>
+
+        <div class="content" id="contentBox-js"> 
+            
+           
+        </div>
+    </main>
+</body>
+<script src="https://kit.fontawesome.com/98c0876139.js" crossorigin="anonymous"></script>
+<script src="script/menu.js"></script>
+<script src="script/gameScript.js"></script>
+</html>

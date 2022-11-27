@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --main-color: #f2f2f2;
+    --contrast-color: #000;
+    --menu-color: #fff;
+    --shadow-glow: rgba(0, 0, 0, 0.4);
+    --highlight-color: #ff0f0f;
+}
+
+.dark-mode:root {
+    --main-color: #181818;
+    --contrast-color: #f2f2f2;
+    --menu-color: #000;
+    --shadow-glow: rgba(255, 255, 255, 0.4);
+    --highlight-color: #2828fd;
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    color: var(--contrast-color);
+    font-family: 'Roboto Mono', monospace;
+
+    transition: all 1s;  
+}
+
+body a {
+    color: var(--contrast-color);
+    transition: all 1s;
+}
+a:hover {
+    text-decoration: underline;    
+    color: var(--highlight-color);
+}
+
+button {
+    background-color: var(--main-color); 
+    color: var(--contrast-color);
+    width: 110px;
+    height: 30px;
+    border-radius: 20px;
+    border: 1px solid var(--contrast-color);
+    font-size: 1.2em;
+    font-weight: 500;
+    box-shadow: 1px 2px 3px var(--shadow-color);
+
+    cursor: pointer;
+}
+
+button:hover {
+    transition: all .5s;
+    box-shadow: 0px 0px 15px  var(--shadow-glow);
+}
+
+
+/*Lateral menu */
+
+header {
+    position: relative;
+}
+
+.hamburguer-btn {
+    width: 2em;
+    height: 3em;
+
+    position: fixed;
+    top: 1em;
+    left: 0.8em;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    cursor: pointer; 
+    transition: all 0.4s;
+
+}
+.hamburguer-btn:hover{
+    height: 3.5em;
+    transform: translateY(-2px);
+    transition: all .5s;
+}
+
+.hamburguer-btn .arrow {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.hamburguer-btn .lines {
+    background-color: var(--contrast-color);
+
+    width: 100%;
+    height: 2px;
+}
+
+
+.menu-content {
+    background-color: var(--menu-color);
+    width: 20%;
+    height: 100vh;
+    /* border-right: 1px solid var(--contrast-color); */
+    /* box-shadow: 1px 1px 10px var(--shadow-color); */
+
+    position: absolute; 
+    left: -20%;
+    top: 0;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: all 0.5s;
+}
+
+.menu-content h1 {
+    margin-top: 3em;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+}
+
+.menu-content p {
+    font-size: .9em;
+    position: absolute;
+    bottom: 3em;
+    z-index: 10;
+}
+
+/* Switch themes control */
+.switch-mode-div {
+    position: absolute;
+    margin-top: 8em;
+}
+
+.switch-mode-div .input-checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.input-checkbox:checked +.label .ball {
+    transform: translateX(19px);
+}
+
+.label {
+    background-color: var(--contrast-color);
+    height: 6px;
+    width: 25px;
+    border-radius: 50px;
+    padding: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.label .ball {
+    background-color: var(--main-color);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.label .fa-moon {
+    color: var(--main-color);
+    font-size: 9px;
+}
+
+.label .fa-sun {
+    color: var(--main-color);
+    font-size: 8px;
+}
+
+
+/* When menu is on: */
+.show-menu .hamburguer-btn {
+    left: 17%;
+}
+
+.show-menu .hamburguer-btn:hover {
+    height: 1em;
+    transform: translateY(2px); 
+    transition: all 1s; 
+}
+
+.show-menu .hamburguer-btn .arrow {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    font-size: 1.5em;
+}
+
+.show-menu .hamburguer-btn:hover .arrow {
+    font-size: 2em;
+    transition: all 1s; 
+}
+
+.show-menu .lines {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.show-menu .menu-content {
+    left: 0;
+}
+
+
+
+/* Main content */
+main {
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    position: relative;
+}
+
+main .h1-content {
+    text-shadow: 1px 1px 3px var(--shadow-glow);
+    position: absolute;
+    top: 15%;
+}
+
+main .h1-content h1 {
+    letter-spacing: 3px;
+    font-size: 3em;
+    font-weight: bold;
+    z-index: 1;
+}
+
+/* Inicial screen config */
+
+.inicial-screen {
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5em;
+    
+    position: absolute;
+    bottom: 25%;
+}
+
+.option-button {
+    margin: 1em 0em 1.5em 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 1.5em;
+}
+
+.option-button select {
+    background-color: var(--main-color);
+    color: var(--contrast-color);
+    width: 3.8em;
+    height: 28px;
+    border: 1px solid var(--contrast-color);
+    border-radius: 20px;
+    
+    font-size: 1.1em;
+
+    cursor: pointer;
+}
+
+.radios {
+    display: flex;
+}
+
+.radios input[type="radio"] {
+    opacity: 0;
+}
+
+.radios label {
+    width: 2.2em;
+    color: var(--contrast-color);
+    font-size: 1.2em;
+    border-radius: 8px;
+    padding: 1px;
+
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    
+}
+
+
+.radios input:checked + label {
+    background-color: var(--contrast-color);
+    color: var(--main-color);
+}
+
+
+/* Game screen config  */
+
+.game-screen {
+    display:  none;
+    visibility: hidden;
+    opacity: 0;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5em;
+    
+    position: absolute;
+    bottom: 28%;
+}
+
+.gameInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8em;
+}
+.operationDisplay {
+    font-size: 2.8em;
+}
+
+.userInput input {
+    background-color: var(--main-color);
+    height: 1.3em;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 5px;
+
+    color: var(--contrast-color);
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+.userInput input:focus {
+    border-color: var(--contrast-color);
+    border: 2px solid
+}
+
+.userInput label {
+    color: var(--shadow-glow);
+    font-size: 1em;
+    cursor: text;
+
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+
+}
+
+.userInput input:focus ~ label,
+.userInput input:valid ~ label  { 
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+/* End game screen config  */
+
+.end-screen {
+    display:  none;
+    visibility: hidden;
+    opacity: 0;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 2.3em;
+    
+    position: absolute;
+    bottom: 20%;
+}
+
+.end-screen h2 {
+    font-size: 2em;
+}
+
+.end-screen .scoredText {
+    font-size: 1.2em;
+    margin-bottom: .7em;
+}
+
+.end-screen .final-scored {
+    font-size: 3em;
+}
