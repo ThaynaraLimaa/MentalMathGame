@@ -235,7 +235,6 @@ main {
     margin: auto;
 
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
     align-items: center;
     gap: 2em;
@@ -256,8 +255,9 @@ main .h1-content h1 {
     z-index: 1;
 }
 
-/* Inicial screen config */
 
+
+/* Inicial screen config */
 .inicial-screen {
     display:  flex;
     flex-direction: column;
@@ -310,15 +310,14 @@ main .h1-content h1 {
     
 }
 
-
 .radios input:checked + label {
     background-color: var(--contrast-color);
     color: var(--main-color);
 }
 
 
-/* Game screen config  */
 
+/* Game screen config  */
 .game-screen {
     display:  none;
     visibility: hidden;
@@ -377,8 +376,8 @@ main .h1-content h1 {
 }
 
 
-/* End game screen config  */
 
+/* End game screen config  */
 .end-screen {
     display:  none;
     visibility: hidden;

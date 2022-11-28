@@ -31,8 +31,9 @@ let sec = 0
 let interval 
 let finalTime 
 
+
+// changing the page layout to game screen 
 startBtn.addEventListener('click',  () => {
-    // changing the page layout to game screen 
     h1Content.style.cssText = 
     'top: 10%;';
     h1Display.style.fontSize = '1.8em';
@@ -53,7 +54,7 @@ startBtn.addEventListener('click',  () => {
 
 
 
-
+// Convert the timer to two digits if the min/sec is less then 10
 function makeTwoDigits(digit) {
     if (digit < 10) {
         return ('0'+ digit)
@@ -85,17 +86,16 @@ function stopTimer() {
 }
 
 
-
-
+//set how many questions will have based on the selector
 function setNumberOfQuestions() {
-    //set how many questions will have based on the selector
     const selectInput = document.querySelector('#numberOfQuestions-js')
     numberOfQuestion =  selectInput.options[selectInput.selectedIndex].value
 
 }
 
+
+// set numbers range 
 function setNumbersRange() {
-    // set numbers range 
     let rangeInput = document.getElementById('numbersRange-js').value
     let numbersRange = parseInt(rangeInput)
 
@@ -104,15 +104,17 @@ function setNumbersRange() {
     }
 }
 
+
+// gives random numbers based on the player choice 
 function makeDigit() {
-    // gives random numbers based on the player choice 
     let digit = numbersIn[Math.floor(Math.random() * numbersIn.length)] 
     return digit
 
 }
 
+
+// define the operation
 function makeOperator() {
-    // define the operation
     let operators = []
     let operatorInput = document.getElementsByName('operationChosed')
     if (operatorInput[0].checked) {
@@ -161,17 +163,15 @@ function writeOperation() {
 }
 
 
+//submit the user answer 
 function submitAnswe(event) {
-    //submit the user answer 
+    //Make the function load only if it is the enter key. 
     if (event.which != 13 || event.keyCode != 13) {
-        //code to execute here
         return 
     }
 
     //count the if answer is right 
     if (userAnswer.value == result) {
-        // console.log(result)
-        // console.log(userAnswer.value)
         rightAnswers += 1
     } 
 
