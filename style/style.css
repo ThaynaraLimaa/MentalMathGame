@@ -243,7 +243,7 @@ main {
 }
 
 main .h1-content {
-    text-shadow: 1px 1px 3px var(--shadow-glow);
+    text-shadow: 1px 1px 15px var(--shadow-glow);
     position: absolute;
     top: 15%;
 }
@@ -253,6 +253,7 @@ main .h1-content h1 {
     font-size: 3em;
     font-weight: bold;
     z-index: 1;
+
 }
 
 
@@ -403,3 +404,4 @@ main .h1-content h1 {
 .end-screen .final-scored {
     font-size: 3em;
 }
+

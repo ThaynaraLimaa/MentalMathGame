@@ -99,9 +99,10 @@ function setNumbersRange() {
     let rangeInput = document.getElementById('numbersRange-js').value
     let numbersRange = parseInt(rangeInput)
 
-    for (let n = 0; n < numbersRange; n++) {
+    for (let n = 1; n < numbersRange; n++) {
         numbersIn.push(n)
     }
+    console.log(numbersIn)
 }
 
 
