@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/responsive.css">
 
+    <!--  Having problems with this 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="manifest" href="favicon/site.webmanifest"> -->
+
+    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
     
     <title>Mental Math Game</title>
 </head>
@@ -52,25 +55,26 @@
         <div class="inicial-screen" id="inicialScreen-js">
             <p id="contentText-js">How good are you with mental math?</p>
             <div class="option-button">
-                <abbr title="number of questions">
-                    <select name="numberOfQuestions" id="numberOfQuestions-js">
-                        <option value="10" selected>10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                        <option value="30">30</option>
-                        <option value="50">50</option>
-                    </select>
-                </abbr>
-
-                <abbr title="Numbers range">
-                    <select name="numbersRange" id="numbersRange-js">
-                        <option value="11" selected>0-10</option>
-                        <option value="21">1-20</option>
-                        <option value="51">1-50</option>
-                        <option value="101">1-100</option>
-                        <option value="1001">1-1000</option>
-                    </select>
-                </abbr>
+                <div>
+                    <abbr title="number of questions">
+                        <select name="numberOfQuestions" id="numberOfQuestions-js">
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                        </select>
+                    </abbr>
+                    <abbr title="Numbers range">
+                        <select name="numbersRange" id="numbersRange-js">
+                            <option value="11" selected>0-10</option>
+                            <option value="21">1-20</option>
+                            <option value="51">1-50</option>
+                            <option value="101">1-100</option>
+                            <option value="1001">1-1000</option>
+                        </select>
+                    </abbr>
+                </div>
 
                 <div class="radios">
                     <abbr title="Addition and subtraction">
