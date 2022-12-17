@@ -14,14 +14,18 @@ const operationDisplay = document.querySelector('#operationDisplay-js')
 const endScreen = document.querySelector('#endScreen-js')
 const finalScored = document.querySelector('#finalScored-js')
 
+const mistakesScreen = document.getElementById('mistakesScreen-js')
+
 
 let numbersIn = [] // will be use to set numbers range
 let numberOfQuestion // will be use to set number or questions
-let digitOne // one number between 1 to 10
+let digitOne // one number between 
 let digitTwo // one number between 1 to 10
 let result // the operation result
 let counter = 1 // count questions made
+let theOperation // use to write the operarion
 let rightAnswers = 0 // count the right answers 
+let mistakes = [] // array that will save all user mistakes
 
 
 
@@ -102,7 +106,6 @@ function setNumbersRange() {
     for (let n = 1; n < numbersRange; n++) {
         numbersIn.push(n)
     }
-    console.log(numbersIn)
 }
 
 
@@ -148,15 +151,15 @@ function writeOperation() {
     // Write the operation and sets the result 
     if (operator === 'sum') {
         result  = digitOne + digitTwo
+        theOperation = `${digitOne} + ${digitTwo}`
         operationDisplay.innerHTML = `${digitOne} + ${digitTwo}`
-        // console.log(`result is  ${digitOne} + ${digitTwo} = ${result}`)
     } else if (operator === 'sub') {
         result  = digitOne - digitTwo
+        theOperation = `${digitOne} - ${digitTwo}`
         operationDisplay.innerHTML = `${digitOne} - ${digitTwo}`
-        // console.log(`result is ${digitOne} - ${digitTwo} = ${result}`)
     } else {
         result = digitOne * digitTwo
-        console.log(result)
+        theOperation = `${digitOne} * ${digitTwo}`
         operationDisplay.innerHTML = `${digitOne} * ${digitTwo}`
     }
 
@@ -174,7 +177,10 @@ function submitAnswe(event) {
     //count the if answer is right 
     if (userAnswer.value == result) {
         rightAnswers += 1
-    } 
+    } else {
+        console.log(`UserAnswer: ${userAnswer.value}, result: ${result}, The operation: ${theOperation}`)
+        mistakes.push(theOperation += ` = ${result}`)
+    }
 
     // questions counter
     counter += 1
@@ -205,9 +211,57 @@ function endGameScreen() {
 
     finalScored.innerHTML = `${rightAnswers}/${numberOfQuestion}`     
     document.getElementById('finalTimer-js').innerHTML = `Time: ${finalTime}`
+    createMistakes()
+
 }
 
 
+function createMistakes() {
+    let mistakeUl = document.getElementById('mistakesUl-js')
+
+    if (mistakes.length == 0) {
+        const li = document.createElement('li')
+        li.innerHTML = 'Congratulations! You made 0 mistakes!'
+        mistakeUl.appendChild(li)
+    } else {
+        for (ele in mistakes) {
+            const li = document.createElement('li')
+            li.innerHTML = mistakes[ele]
+            mistakeUl.appendChild(li)
+        }
+    }
+    
+}
+
+function showMistakes() {
+    endScreen.style.cssText = 
+    'display: blox;' +
+    'opacity: 0;' +
+    'visibility: hidden;'
+
+    h1Content.style.cssText = 
+    'display:none';
+
+    mistakesScreen.style.cssText = 
+        'display: flex;' +
+        'visibility: visible;'
+
+}
+
+function closeMistakes() {
+    mistakesScreen.style.cssText = 
+    'display: none;' +
+    'visibility: hidden;'
+
+    h1Content.style.cssText = 
+    'display: block;';
+
+    endScreen.style.cssText = 
+    'display: flex;' +
+    'opacity: 1;' +
+    'visibility: visible;'
+
+}
 
 function restart() {
     location.reload()

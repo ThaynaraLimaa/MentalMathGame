@@ -116,7 +116,7 @@ header {
     position: absolute; 
     left: -20%;
     top: 0;
-    z-index: 5;
+    z-index: 8;
 
     display: flex;
     flex-direction: column;
@@ -230,7 +230,7 @@ header {
 
 /* Main content */
 main {
-    width: 80%;
+    width: 100%;
     height: 100vh;
     margin: auto;
 
@@ -391,6 +391,9 @@ main .h1-content h1 {
     
     position: absolute;
     bottom: 20%;
+
+    overflow: hidden;
+    
 }
 
 .end-screen h2 {
@@ -406,3 +409,43 @@ main .h1-content h1 {
     font-size: 3em;
 }
 
+
+/* Mistakes pop-up */
+.mistakes-screen {
+    width: 100%;
+    height: 100vh;
+    margin-top: 1em;
+
+    display: block;
+    visibility: hidden;
+
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    z-index: 5;
+}
+
+.close-X {
+    background-color: transparent;
+    width: 50px;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: none;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.close-X:hover {
+    box-shadow: none;
+    font-size: 1.5em;
+}
+
+
+.mistakes-screen li  {
+    margin: 15px;
+}

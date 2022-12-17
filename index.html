@@ -46,7 +46,7 @@
             </div>
         </aside>
     </header>
-    <main>
+    <main id="main">
         <div class="h1-content">
             <h1 id="h1Display-js">Mental Math Game</h1>
         </div>
@@ -114,10 +114,16 @@
             <p class="scoredText"> You scored: </p>
             <p class="final-scored" id= 'finalScored-js'></p>
             <p id="finalTimer-js"></p>
-            <button onclick = 'restart()'> Restart </button>
+            <div>
+                <button onclick = 'restart()'> Restart </button>
+                <button onclick="showMistakes()">Mistakes</button>
+            </div>
         </div>
 
-        <div class="content" id="contentBox-js"> 
+        <div class="mistakes-screen" id="mistakesScreen-js">
+            <ul id="mistakesUl-js"></ul>
+            <button class="close-X" onclick="closeMistakes()">X</button>
+        </div>
             
            
         </div>
