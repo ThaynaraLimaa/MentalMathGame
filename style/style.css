@@ -355,9 +355,10 @@ main .h1-content h1 {
     font-size: 1em;
 }
 
+.userInput input:focus,
 .userInput input:focus {
-    border-color: var(--contrast-color);
-    border: 2px solid
+    border: 2px solid var(--contrast-color);
+    outline: none;
 }
 
 .userInput label {

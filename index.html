@@ -58,6 +58,7 @@
                 <div>
                     <abbr title="number of questions">
                         <select name="numberOfQuestions" id="numberOfQuestions-js">
+                            <option value="0" disabled>Numbers of questions</option>
                             <option value="10" selected>10</option>
                             <option value="15">15</option>
                             <option value="20">20</option>
@@ -67,6 +68,7 @@
                     </abbr>
                     <abbr title="Numbers range">
                         <select name="numbersRange" id="numbersRange-js">
+                            <option value="0" disabled>Numbers range</option>
                             <option value="11" selected>0-10</option>
                             <option value="21">1-20</option>
                             <option value="51">1-50</option>
@@ -97,15 +99,18 @@
 
         <!-- The game screen content -->
         <div class="game-screen" id="gameScreen-js">
+            
             <div class="gameInfo">
                 <p id="questionCounter-js"></p>
                 <p id="timer-js">00:00</p>
             </div>
+
             <div class="operationDisplay" id="operationDisplay-js"></div>
-            <div class="userInput">
-                <input type = 'number' id = 'userAnswer-js' class="user-answer" onkeypress = "submitAnswe(event)" required >
-                <label for = 'userAnswer'>Type here</label>
-            </div>
+
+                <div class="userInput">
+                    <input type = 'number' id = 'userAnswer-js' class="user-answer" onkeypress = "submitAnswe(event)" required >
+                    <label for = 'userAnswer'>Type here</label>
+                </div>
         </div>
 
         <!-- The end game screen content -->

@@ -178,7 +178,6 @@ function submitAnswe(event) {
     if (userAnswer.value == result) {
         rightAnswers += 1
     } else {
-        console.log(`UserAnswer: ${userAnswer.value}, result: ${result}, The operation: ${theOperation}`)
         mistakes.push(theOperation += ` = ${result}`)
     }
 
@@ -211,6 +210,7 @@ function endGameScreen() {
 
     finalScored.innerHTML = `${rightAnswers}/${numberOfQuestion}`     
     document.getElementById('finalTimer-js').innerHTML = `Time: ${finalTime}`
+    
     createMistakes()
 
 }
