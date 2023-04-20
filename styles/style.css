@@ -26,8 +26,8 @@
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     background-color: var(--main-color);
     color: var(--contrast-color);
     font-family: 'Roboto Mono', monospace;
@@ -108,13 +108,11 @@ header {
 
 .menu-content {
     background-color: var(--menu-color);
-    width: 20%;
+    width: 30%;
     height: 100vh;
-    /* border-right: 1px solid var(--contrast-color); */
-    /* box-shadow: 1px 1px 10px var(--shadow-color); */
 
     position: absolute; 
-    left: -20%;
+    left: -30%;
     top: 0;
     z-index: 8;
 
@@ -196,7 +194,7 @@ header {
 
 /* When menu is on: */
 .show-menu .hamburguer-btn {
-    left: 17%;
+    left: 25%;
 }
 
 .show-menu .hamburguer-btn:hover {
@@ -242,31 +240,28 @@ main {
     position: relative;
 }
 
-main .h1-content {
-    text-shadow: 1px 1px 15px var(--shadow-glow);
-    position: absolute;
-    top: 15%;
-}
 
-main .h1-content h1 {
+main .page-h1 {
+    text-shadow: 1px 1px 15px var(--shadow-glow);
     letter-spacing: 3px;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: bold;
     z-index: 1;
-
 }
 
 
 
 /* Inicial screen config */
 .inicial-screen {
+    width: 100%;
+
     display:  flex;
     flex-direction: column;
     align-items: center;
     gap: 2em;
     
     position: absolute;
-    bottom: 25%;
+    top: 20%;
 }
 
 .option-button {
@@ -330,7 +325,7 @@ main .h1-content h1 {
     gap: 3.5em;
     
     position: absolute;
-    bottom: 28%;
+    top: 20%;
 }
 
 .gameInfo {
@@ -341,6 +336,10 @@ main .h1-content h1 {
 }
 .operationDisplay {
     font-size: 2.8em;
+}
+
+.userInput {
+    position: relative;
 }
 
 .userInput input {
@@ -367,7 +366,7 @@ main .h1-content h1 {
     cursor: text;
 
     position: absolute;
-    left: 12px;
+    left: 10px;
     bottom: 8px;
 
 }
@@ -391,7 +390,7 @@ main .h1-content h1 {
     gap: 2.3em;
     
     position: absolute;
-    bottom: 20%;
+    top: 20%;
 
     overflow: hidden;
     

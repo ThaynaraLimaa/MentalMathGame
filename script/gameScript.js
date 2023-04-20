@@ -1,5 +1,4 @@
 const h1Display = document.querySelector('#h1Display-js')
-const h1Content = document.querySelector('.h1-content')
 
 const inicialScreen = document.querySelector('#inicialScreen-js')
 const startBtn = document.querySelector('#startBtn-js')
@@ -38,9 +37,9 @@ let finalTime
 
 // changing the page layout to game screen 
 startBtn.addEventListener('click',  () => {
-    h1Content.style.cssText = 
-    'top: 10%;';
-    h1Display.style.fontSize = '1.8em';
+    // h1Content.style.cssText = 
+    // 'top: 10%;';
+    h1Display.style.fontSize = '1.5em';
 
     inicialScreen.style.display = `none`
 
@@ -234,14 +233,12 @@ function createMistakes() {
 }
 
 function showMistakes() {
+    //Hide endScreen
     endScreen.style.cssText = 
-    'display: blox;' +
     'opacity: 0;' +
-    'visibility: hidden;'
+    'visibility: hidden;' 
 
-    h1Content.style.cssText = 
-    'display:none';
-
+    //Show mistakes
     mistakesScreen.style.cssText = 
         'display: flex;' +
         'visibility: visible;'
@@ -249,17 +246,16 @@ function showMistakes() {
 }
 
 function closeMistakes() {
+    //Hide mistakes
     mistakesScreen.style.cssText = 
     'display: none;' +
     'visibility: hidden;'
 
-    h1Content.style.cssText = 
-    'display: block;';
-
+    // show endScreen
     endScreen.style.cssText = 
     'display: flex;' +
     'opacity: 1;' +
-    'visibility: visible;'
+    'visibility: visible;' 
 
 }
 

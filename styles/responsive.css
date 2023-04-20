@@ -1,0 +1,32 @@
+
+@media (max-width: 800px) {
+    /* Side menu */
+    .menu-content {
+        width: 42%;
+        left: -42%;
+    }
+    .show-menu .hamburguer-btn {
+        left: 35%;
+    }
+}
+
+@media (max-width: 530px) {
+    /* Side menu */
+    .menu-content {
+        width: 100%;
+        left: -100%;
+    }
+    .show-menu .hamburguer-btn {
+        left: 90%;
+    }
+    .menu-content h1 {
+        margin-top: 2em;
+        font-size: 1.4em;
+        letter-spacing: 2px;
+    }
+
+    .menu-content p {
+        font-size: 1em;
+        bottom: 3em;
+    }
+}

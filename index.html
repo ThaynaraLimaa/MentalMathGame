@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/responsive.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/responsive.css">
 
     <!--  Having problems with this 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -47,13 +47,14 @@
         </aside>
     </header>
     <main id="main">
-        <div class="h1-content">
+        <!-- <div class="h1-content">
             <h1 id="h1Display-js">Mental Math Game</h1>
-        </div>
+        </div> -->
 
         <!-- The inicial screen content -->
         <div class="inicial-screen" id="inicialScreen-js">
-            <p id="contentText-js">How good are you with mental math?</p>
+            <h1 class="page-h1">Mental Math Game</h1>
+            <p class="inicial-paragraph" id="contentText-js">How good are you with mental math?</p>
             <div class="option-button">
                 <div>
                     <abbr title="number of questions">
@@ -99,14 +100,15 @@
 
         <!-- The game screen content -->
         <div class="game-screen" id="gameScreen-js">
-            
+
+            <h1 class="page-h1" id="h1Display-js" >Mental Math Game</h1>
+
             <div class="gameInfo">
                 <p id="questionCounter-js"></p>
                 <p id="timer-js">00:00</p>
             </div>
 
             <div class="operationDisplay" id="operationDisplay-js"></div>
-
                 <div class="userInput">
                     <input type = 'number' id = 'userAnswer-js' class="user-answer" onkeypress = "submitAnswe(event)" required >
                     <label for = 'userAnswer'>Type here</label>
@@ -115,21 +117,25 @@
 
         <!-- The end game screen content -->
         <div class="end-screen" id="endScreen-js">
+
+            <h1 class="page-h1" id="h1Display-js">Mental Math Game</h1>
             <h2>End Game </h2>
             <p class="scoredText"> You scored: </p>
             <p class="final-scored" id= 'finalScored-js'></p>
             <p id="finalTimer-js"></p>
+
             <div>
                 <button onclick = 'restart()'> Restart </button>
                 <button onclick="showMistakes()">Mistakes</button>
             </div>
+
         </div>
 
+        <!-- Mistakes screen content -->
         <div class="mistakes-screen" id="mistakesScreen-js">
             <ul id="mistakesUl-js"></ul>
             <button class="close-X" onclick="closeMistakes()">X</button>
         </div>
-            
            
         </div>
     </main>
