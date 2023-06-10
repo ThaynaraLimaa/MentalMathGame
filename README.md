@@ -2,16 +2,13 @@
 
 ## About the project:
 
-The Mental Math Game is a mini-game about math operations. The aim of the game is to help you practice and improve your mental/fast math.
-In Mental Math Game you can choose which math operation to practice (addition, subtraction, and multiplication, I haven’t integrated the division yet), how many questions it will have and the numbers range, it can be chosen to practice only with a short number (1 to 10) or higher (1 to 1000), it’s your choice.
-
-## To be improved:
-
-The project is ready to be used, but there are somethings that need to be improved:
-- When using mobile it’s not possible to use the "-" when the operation result is negative.
+The Mental Math Game is a mini-game to help you enhance your calculation skills. The aim of the game is to help you practice and improve your mental/fast math.
+Within the Mental Math Game, you can choose which math operation to practice (addition, subtraction, and multiplication)You can also choose how many questions it will have and the numbers range. You can chose to practice with shorter range, for example, from 1 to 10, or challenge yourself with higher numbers like from 1 to 1000! It's your choice. 
 
 ## Technologies used:
 
 - **HTML** 
 - **CSS** 
 - **JavaScript**
+
+To play the game you can access the demo [here](https://thaynaralimaa.github.io/MentalMathGame/) :)
